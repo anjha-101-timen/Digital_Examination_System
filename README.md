@@ -26,6 +26,11 @@ The <span style="color: #33ccff;">Ultimate Assessment Deployment Platform</span>
 <hr style="border: 4px double #FFD700; border-bottom: none; margin: 40px 0;">
 
 <h2 style="font-size: 2.2em; color: #008080; font-weight: bold; border-left: 10px solid #00FFFF; padding-left: 15px; background-color: #e0f7fa; border-radius: 5px;">
+<span style="color: #00FFFF;">&#x1F4C1; PROJECT TEAM MEMBER : </br> AJAY NATH JHA : 2301010170 </br> </span> 
+<span style="color: #00FFFF;"> Shubham Sarkar : 2301010196 </br> </span>
+</h2>
+
+<h2 style="font-size: 2.2em; color: #008080; font-weight: bold; border-left: 10px solid #00FFFF; padding-left: 15px; background-color: #e0f7fa; border-radius: 5px;">
 <span style="color: #00FFFF;">&#x1F4C1; PROJECT OVERVIEW:</span> The <i style="color: #FF6347;">Assessment Lifecycle</i> <span style="font-size: 1.2em; color: #FFD600;">🎯</span>
 </h2>
 
