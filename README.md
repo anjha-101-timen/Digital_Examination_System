@@ -1,7 +1,7 @@
 <div align="center" style="padding: 25px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); color: white;">
 <h1 style="font-size: 4em; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px; font-family: 'Arial Black', sans-serif;">
 <a href="#" style="text-decoration: none;">
-<span style="color: #FFD700; text-shadow: 3px 3px #000000; display: inline-block; transform: rotate(-5deg);">&#x1F680; NEXT-LEVEL </span>
+<span style="color: #FFD700; text-shadow: 3px 3px #000000; display: inline-block; transform: rotate(-5deg);">&#x1F680; </span>
 <span style="color: #00FF00; font-style: italic; text-decoration: underline; display: inline-block; transform: rotate(5deg);">DIGITAL EXAMINATION SYSTEM </span>
 <span style="color: #FF4500;">(DES) &#x1F393;</span><span style="color: #FFFFFF; font-size: 1.2em;">🔥</span>
 </a>
