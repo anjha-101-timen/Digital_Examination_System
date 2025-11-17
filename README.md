@@ -13,8 +13,8 @@ The <span style="color: #33ccff;">Ultimate Assessment Deployment Platform</span>
 
 <p align="center" style="margin: 30px 0;">
 <!-- CORRECTED: Set functional href and fixed the shields.io src URL -->
-<a href="https://www.google.com/url?sa=E&source=gmail&q=https://live-des-portal.example.com" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/View_Live-Assessment_Portal-2E7D32%3Fstyle%3Dfor-the-badge%26logo%3Dweb%26logoColor%3Dwhite" alt="Live Demo"></a>
-<a href="https://www.google.com/url?sa=E&source=gmail&q=https://github.com/example/digital-exam-system" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/View_Source-GitHub-1976D2%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite" alt="GitHub Repository"></a>
+<a href="https://www.google.com/url?sa=E&source=gmail&q=https://anjha-101-timen.github.io/Digital_Examination_System/" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/View_Live-Assessment_Portal-2E7D32%3Fstyle%3Dfor-the-badge%26logo%3Dweb%26logoColor%3Dwhite" alt="Live Demo"></a>
+<a href="https://www.google.com/url?sa=E&source=gmail&q=https://github.com/anjha-101-timen/Digital_Examination_System" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/View_Source-GitHub-1976D2%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite" alt="GitHub Repository"></a>
 </p>
 
 <div align="center" style="font-size: 1.5em; color: #FF4500; font-weight: extra-bold; margin: 15px 0; padding: 5px; background-color: #ffe0b2; border-radius: 10px; border: 2px solid #ffcc80;">
