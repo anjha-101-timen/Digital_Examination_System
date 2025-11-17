@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Examination | Digital Exam System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="update.css" />
+
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <h1>Examination Management Console</h1>
+      <nav class="nav-menu">
+        <button class="nav-btn" onclick="location.href='index.html'">Create Examination</button>
+        <button class="nav-btn" onclick="location.href='read.html'">View Examinations</button>
+        <button class="nav-btn active">Edit Examination</button>
+        <button class="nav-btn" onclick="location.href='delete.html'">Remove Examination</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Modify Examination Configuration</h2>
+      <p>Select an examination to update its structure, questions, and settings. All modifications are synchronized in real time with the central database.</p>
+
+      <!-- Exam Selection -->
+      <div class="form-group">
+        <label for="examSelect">Select Examination</label>
+        <select id="examSelect" required aria-label="Select examination to edit">
+          <option value="">Loading examinations...</option>
+        </select>
+      </div>
+
+      <!-- Examination Metadata Summary -->
+      <div id="examInfo" class="exam-info" style="display: none;">
+        <h3 id="examName"></h3>
+        <span id="examLevel" class="tag"></span>
+        <div class="details-grid">
+          <p><strong>Branch:</strong> <span id="examBranch"></span></p>
+          <p><strong>Subject:</strong> <span id="examSubject"></span></p>
+          <p><strong>Topic:</strong> <span id="examTopic"></span></p>
+          <p><strong>Duration:</strong> <span id="examDuration"></span> minutes</p>
+          <p><strong>Total Questions:</strong> <span id="examTotalQuestions"></span></p>
+          <p><strong>Positive Marks:</strong> +<span id="examPositiveMarks"></span></p>
+          <p><strong>Negative Marks:</strong> -<span id="examNegativeMarks"></span></p>
+          <p><strong>Exam Date:</strong> <span id="examDate"></span></p>
+          <p><strong>Exam Time:</strong> <span id="examTime"></span></p>
+          <p><strong>Applicable Classes:</strong> <span id="examClasses"></span></p>
+          <p><strong>Multiple Choice Options:</strong> <span id="examMcqOptions"></span></p>
+          <p><strong>Time Per Question:</strong> <span id="examTimePerQuestion"></span> seconds</p>
+        </div>
+      </div>
+
+      <!-- Question Navigation Controls -->
+      <!-- <div class="question-navigation">
+        <div class="question-counter">
+          Question <span id="questionCounter">1</span> of <span id="totalQuestions">1</span>
+        </div>
+        <div class="question-navigation-controls">
+          <button id="prevQuestionBtn" class="nav-button prev" data-tooltip="Previous Question">
+            <span>←</span>
+          </button>
+          <button id="nextQuestionBtn" class="nav-button next" data-tooltip="Next Question">
+            <span>→</span>
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Questions Editor -->
+      <div id="questionsContainer" class="questions-container">
+        <!-- Dynamically generated question cards will be inserted here -->
+         
+      </div>
+    </main>
+    
+    <!-- Login Modal -->
+    <!-- <div class="overlay" id="authOverlay"></div>
+    <div class="login-modal" id="loginModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Authentication Required</h2>
+          <p>Please enter your credentials to edit examinations</p>
+        </div>
+        
+        <div class="form-group modal">
+          <label>Username</label>
+          <input type="text" id="usernameInput" class="modal-input" placeholder="Enter your username" autofocus>
+        </div>
+        
+        <div class="form-group modal">
+          <label>Password</label>
+          <input type="password" id="passwordInput" class="modal-input" placeholder="Enter your password">
+        </div>
+        
+        <div class="error-message" id="loginError"></div>
+        
+        <button class="btn-modal" id="loginBtn">
+          <span>Authenticate</span>
+        </button>
+      </div>
+    </div>
+  </div> -->
+  
+
+  <!-- Load Firebase & Update Script -->
+  <script type="module" src="update.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Exam | Digital Exam System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="delete.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <h1>Exam Management Console</h1>
+      <nav class="nav-menu">
+        <button class="nav-btn" onclick="location.href='index.html'">Create Assessment</button>
+        <button class="nav-btn" onclick="location.href='read.html'">View Assessments</button>
+        <button class="nav-btn" onclick="location.href='update.html'">Modify Assessment</button>
+        <button class="nav-btn active">Remove Assessment</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Remove Assessment</h2>
+      <p>Select an assessment to permanently remove from the system. This action is irreversible.</p>
+
+      <!-- Critical Deletion Policy -->
+      <div class="warning-guide">
+        <h4>Irreversible Data Deletion</h4>
+        <p>Deleting an assessment will permanently erase all associated data, including questions, answer keys, student responses, analytics, and metadata. This operation cannot be undone under any circumstances.</p>
+      </div>
+
+      <div class="warning-guide">
+        <h4>Data Integrity Advisory</h4>
+        <p>Before proceeding, confirm that no active sessions are in progress for this assessment. Ensure all results have been archived or exported in compliance with institutional data retention policies. Once deleted, recovery is not supported.</p>
+      </div>
+
+      <!-- Exam Selection -->
+      <div class="form-group">
+        <label for="examSelect">Select Assessment to Remove</label>
+        <div class="select-wrapper">
+          <select id="examSelect" required aria-label="Select assessment to delete">
+            <option value="">Loading assessments...</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Assessment Summary Card -->
+      <div id="examDetails" class="exam-details-card" style="display: none;">
+        <h3 id="examName"></h3>
+        <span id="examLevel" class="tag"></span>
+
+        <div class="details-grid">
+          <p><strong>Branch:</strong> <span id="examBranch"></span></p>
+          <p><strong>Subject:</strong> <span id="examSubject"></span></p>
+          <p><strong>Topic:</strong> <span id="examTopic"></span></p>
+          <p><strong>Duration:</strong> <span id="examDuration"></span> minutes</p>
+          <p><strong>Total Questions:</strong> <span id="examTotalQuestions"></span></p>
+          <p><strong>Positive Marks:</strong> +<span id="examPositiveMarks"></span></p>
+          <p><strong>Negative Marks:</strong> -<span id="examNegativeMarks"></span></p>
+          <p><strong>Scheduled Date:</strong> <span id="examDate"></span></p>
+          <p><strong>Scheduled Time:</strong> <span id="examTime"></span></p>
+          <p><strong>Applicable Classes:</strong> <span id="examClasses"></span></p>
+          <p><strong>Multiple Choice Options:</strong> <span id="examMcqOptions"></span></p>
+          <p><strong>Time Per Question:</strong> <span id="examTimePerQuestion"></span> seconds</p>
+        </div>
+      </div>
+
+      <!-- Delete Action Button -->
+      <button id="confirmDelete" class="btn btn-danger" disabled aria-label="Delete selected assessment">
+        Remove Assessment
+      </button>
+    </main>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content">
+      <h3 id="modalTitle">Confirm Assessment Removal</h3>
+      <div id="modalExamDetails" class="modal-details">
+        <!-- Dynamic exam summary inserted here -->
+      </div>
+      <p class="warning">
+        You are about to permanently remove this assessment from the system. This action will delete all associated records and cannot be reversed. 
+        <strong>Proceed only if you have confirmed data backup and administrative authorization.</strong>
+      </p>
+      <div class="modal-actions">
+        <button id="modalCancel" class="btn btn-outline">Cancel</button>
+        <button id="modalConfirm" class="btn btn-danger">Confirm Removal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Firebase & Delete Script -->
+  <script type="module" src="delete.js"></script>
+</body>
+</html>

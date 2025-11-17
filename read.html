@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read Exams | Digital Exam System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="read.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <h1>Exam Manager</h1>
+      <nav class="nav-menu">
+        <button class="nav-btn" onclick="location.href='index.html'">Create Exam</button>
+        <button class="nav-btn active">Read Exams</button>
+        <button class="nav-btn" onclick="location.href='update.html'">Update Exam</button>
+        <button class="nav-btn" onclick="location.href='delete.html'">Delete Exam</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>All Exams</h2>
+      <div id="examList" class="exam-grid">
+        <p class="loading">Loading exams...</p>
+      </div>
+
+      <!-- Question Viewer -->
+      <div id="questionViewer" class="question-viewer" style="display: none;">
+        <div class="timers">
+          <div class="timer main-timer">Total Time: <span id="mainTimer">00:00:00</span></div>
+          <div class="timer question-timer">Question Time: <span id="questionTimer">00:00</span></div>
+        </div>
+
+        <div class="question-header">
+          <div>
+            <h3>Question <span id="currentQ">1</span> of <span id="totalQ">0</span></h3>
+            <div class="question-meta">
+              <span id="questionTypeBadge" class="question-type-badge">MCQ</span>
+              <span id="difficultyBadge" class="difficulty-badge">Medium</span>
+              <div class="question-context">
+                <span id="questionSubject" class="context-item subject">Physics</span>
+                <span id="questionTopic" class="context-item topic">Newton's Laws</span>
+              </div>
+              <div class="marking-system">
+                <span class="marking-item positive-marking">+<span id="positiveMark">1</span></span>
+                <span class="marking-item negative-marking">-<span id="negativeMark">0.25</span></span>
+              </div>
+            </div>
+          </div>
+          <button id="leaveBtn" class="btn btn-review">Leave Exam</button>
+        </div>
+
+        <div class="question-body">
+          <div id="questionText">Loading question...</div>
+          
+          <!-- Options Container - will be dynamically populated based on question type -->
+          <div id="optionsContainer"></div>
+          
+          <!-- Explanation for students (optional) -->
+          <div id="hintSection" class="hint-section" style="display: none;">
+            <h4>Hint:</h4>
+            <p id="hintText"></p>
+          </div>
+        </div>
+
+        <div class="question-actions">
+          <button id="clearBtn" class="btn btn-clear">Clear Answer</button>
+          <button id="markReview" class="btn btn-review">Mark for Review</button>
+        </div>
+
+        <div class="question-footer">
+          <button id="reviewSummaryBtn" class="btn btn-review">Review Summary</button>
+          <button id="savePrev" class="btn btn-secondary">Save & Previous</button>
+          <button id="prevBtn" class="btn btn-outline">Previous</button>
+          <button id="nextBtn" class="btn btn-outline">Next</button>
+          <button id="saveNext" class="btn btn-primary">Save & Next</button>
+          <button id="submitBtn" class="btn btn-success">Submit Exam</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Question Panel (Hidden until exam starts) -->
+    <aside id="questionPanel" class="question-panel" style="display: none;">
+      <div class="panel-header">
+        <h3>Question Panel</h3>
+        <div class="main-timer">Exam Time: <span id="mainTimer">00:00:00</span></div>
+      </div>
+      <div id="questionGrid" class="question-grid"></div>
+    </aside>
+  </div>
+
+  <!-- Load Your App Logic -->
+  <script type="module" src="read.js"></script>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h3 id="modalTitle">Confirm Action</h3>
+      <p id="modalMessage">Are you sure you want to proceed?</p>
+      <div class="modal-actions">
+        <button id="modalCancel" class="btn btn-outline">Cancel</button>
+        <button id="modalConfirm" class="btn btn-primary">Yes, Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Summary Modal -->
+  <div id="summaryModal" class="modal" style="display: none;">
+    <div class="modal-content" style="width: 520px; max-width: 90vw;">
+      <h3>Exam Summary</h3>
+      <p>Review your progress before submission.</p>
+
+      <div class="summary-details" style="background: rgba(30,50,80,0.5); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+        <p><strong>Exam:</strong> <span id="summaryExamName">-</span></p>
+        <p><strong>Total Questions:</strong> <span id="summaryTotalQ">0</span></p>
+        <p><strong>Attempted:</strong> <span id="summaryAttempted">0</span></p>
+        <p><strong>Unattempted:</strong> <span id="summaryUnattempted">0</span></p>
+        <p><strong>Marked for Review:</strong> <span id="summaryMarked">0</span></p>
+        <p><strong>Marking Scheme:</strong> +<span id="summaryPositiveMark">1</span>/-<span id="summaryNegativeMark">0.25</span></p>
+        <p><strong>Total Time Spent:</strong> <span id="summaryTotalTime">00:00:00</span></p>
+        <p><strong>Average Time per Question:</strong> <span id="summaryAvgTime">00:00</span></p>
+      </div>
+
+      <div class="modal-actions">
+        <button id="closeSummary" class="btn btn-outline">Close</button>
+        <button id="confirmSubmit" class="btn btn-success">Submit Exam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Feedback -->
+  <div id="statusFeedback" class="save-feedback" style="display: none;"></div>
+  <script type="module" src="read.js"></script>
+</body>
+</html>

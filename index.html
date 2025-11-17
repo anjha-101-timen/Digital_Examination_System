@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Exam | Digital Exam System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="create.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <h1>Exam Management System</h1>
+      <nav class="nav-menu">
+        <button class="nav-btn active">Create Exam</button>
+        <button class="nav-btn" onclick="location.href='read.html'">View Exams</button>
+        <button class="nav-btn" onclick="location.href='update.html'">Edit Exams</button>
+        <button class="nav-btn" onclick="location.href='delete.html'">Delete Exams</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Create New Examination</h2>
+      <form id="examForm" class="exam-form">
+
+        <!-- Exam Identification -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examName">Examination Title</label>
+            <input type="text" id="examName" placeholder="e.g., GATE, ESE" required />
+          </div>
+          <div class="form-group">
+            <label for="examBranch">Academic Branch</label>
+            <input type="text" id="examBranch" placeholder="e.g., CS, DA" required />
+          </div>
+          <div class="form-group">
+            <label for="examCode">Examination Code</label>
+            <input type="text" id="examCode" placeholder="e.g., GATE2025" required />
+          </div>
+        </div>
+
+        <!-- Subject & Topic -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examSubject">Subject</label>
+            <input type="text" id="examSubject" placeholder="e.g., Algorithms" required />
+          </div>
+          <div class="form-group">
+            <label for="examTopic">Topic</label>
+            <input type="text" id="examTopic" placeholder="e.g., Sorting" required />
+          </div>
+        </div>
+
+        <!-- Duration: Hours -->
+        <div class="form-group">
+          <label>Examination Duration: Hours (1–5)</label>
+          <div class="table-container duration-table">
+            <table class="selection-table" id="hoursTable">
+              <tr></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Duration: Minutes -->
+        <div class="form-group">
+          <label>Examination Duration: Minutes (0–59)</label>
+          <div class="grid-container min-grid" id="minutesGrid"></div>
+        </div>
+
+        <!-- Total Questions -->
+        <div class="form-group">
+          <label>Total Number of Questions (1–250)</label>
+          <div class="grid-container q-grid" id="questionsGrid"></div>
+        </div>
+
+        <!-- Time per Question: Minutes -->
+        <div class="form-group">
+          <label>Time Per Question: Minutes (1–10)</label>
+          <div class="table-container time-table">
+            <table class="selection-table" id="timeMinTable">
+              <tr></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Time per Question: Seconds -->
+        <div class="form-group">
+          <label>Time Per Question: Seconds (0–59)</label>
+          <div class="grid-container sec-grid" id="secondsGrid"></div>
+        </div>
+
+        <!-- Difficulty Level -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examLevel">Difficulty Level</label>
+            <select id="examLevel" required>
+              <option value="" disabled selected>Select difficulty level</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Marking Scheme -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="positiveMarks">Positive Marks per Correct Answer</label>
+            <input type="number" step="0.5" id="positiveMarks" value="2.0" placeholder="e.g., 2.0" required />
+          </div>
+          <div class="form-group">
+            <label for="negativeMarks">Negative Marks per Incorrect Answer</label>
+            <input type="number" step="0.5" id="negativeMarks" value="0.5" placeholder="e.g., 0.5" required />
+          </div>
+        </div>
+
+        <!-- Exam Schedule -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="examDate">Scheduled Date</label>
+            <input type="date" id="examDate" required />
+          </div>
+          <div class="form-group">
+            <label for="examTime">Scheduled Time</label>
+            <input type="time" id="examTime" required />
+          </div>
+        </div>
+
+        <!-- Class Level Selection -->
+        <div class="form-group">
+          <label>Applicable Academic Levels</label>
+          <div class="grid-container class-grid" id="classGrid">
+            <button type="button" class="grid-btn">Nursery</button>
+            <button type="button" class="grid-btn">LKG</button>
+            <button type="button" class="grid-btn">UKG</button>
+            <button type="button" class="grid-btn">1</button>
+            <button type="button" class="grid-btn">2</button>
+            <button type="button" class="grid-btn">3</button>
+            <button type="button" class="grid-btn">4</button>
+            <button type="button" class="grid-btn">5</button>
+            <button type="button" class="grid-btn">6</button>
+            <button type="button" class="grid-btn">7</button>
+            <button type="button" class="grid-btn">8</button>
+            <button type="button" class="grid-btn">9</button>
+            <button type="button" class="grid-btn">10</button>
+            <button type="button" class="grid-btn">11</button>
+            <button type="button" class="grid-btn">12</button>
+            <button type="button" class="grid-btn">1st Year</button>
+            <button type="button" class="grid-btn">2nd Year</button>
+            <button type="button" class="grid-btn">3rd Year</button>
+            <button type="button" class="grid-btn">4th Year</button>
+            <button type="button" class="grid-btn">5th Year</button>
+            <button type="button" class="grid-btn">6th Year</button>
+          </div>
+        </div>
+
+        <!-- Section Selection -->
+        <div class="form-group">
+          <label>Assigned Sections</label>
+          <div class="tab-container">
+            <button type="button" class="tab active" data-tab="letters">Alphabetic (A–Z)</button>
+            <button type="button" class="tab" data-tab="numbers">Numeric (1–99)</button>
+          </div>
+          <div class="grid-container section-grid active" id="lettersGrid"></div>
+          <div class="grid-container section-grid" id="numbersGrid" style="display: none;"></div>
+        </div>
+
+        <!-- Semester -->
+        <div class="form-group">
+          <label>Academic Semesters</label>
+          <div class="grid-container semester-grid" id="semesterGrid">
+            <button type="button" class="grid-btn">I</button>
+            <button type="button" class="grid-btn">II</button>
+            <button type="button" class="grid-btn">III</button>
+            <button type="button" class="grid-btn">IV</button>
+            <button type="button" class="grid-btn">V</button>
+            <button type="button" class="grid-btn">VI</button>
+            <button type="button" class="grid-btn">VII</button>
+            <button type="button" class="grid-btn">VIII</button>
+            <button type="button" class="grid-btn">IX</button>
+            <button type="button" class="grid-btn">X</button>
+            <button type="button" class="grid-btn">XI</button>
+            <button type="button" class="grid-btn">XII</button>
+          </div>
+        </div>
+
+        <!-- Type of Objective Questions -->
+        <div class="form-group">
+          <label>Type of Objective Questions</label>
+          <div class="chip-group" id="questionTypeGroup">
+            <span class="chip" data-value="mcq">Multiple Choice Question (Single Correct)</span>
+            <span class="chip" data-value="msq">Multiple Select Question (Multiple Correct)</span>
+            <span class="chip" data-value="true_false">True or False</span>
+            <span class="chip" data-value="match_following">Match the Following</span>
+            <span class="chip" data-value="one_word">One Word Answer</span>
+            <span class="chip" data-value="nat">Numerical Answer Type (NAT)</span>
+          </div>
+        </div>
+
+        <!-- Objective Answer Type -->
+        <div class="form-group">
+          <label>Answer Format Specifications</label>
+          <div class="chip-group" id="answerTypeGroup">
+            <span class="chip" data-value="mcq_3">Three-Option MCQ</span>
+            <span class="chip" data-value="mcq_4">Four-Option MCQ</span>
+            <span class="chip" data-value="mcq_5">Five-Option MCQ</span>
+            <span class="chip" data-value="true_false">Binary Response (True/False)</span>
+            <span class="chip" data-value="mtf">Multiple True/False</span>
+            <span class="chip" data-value="match_single">Single Pair Match (1:1)</span>
+            <span class="chip" data-value="match_multiple">Multiple Pair Match (1:Many)</span>
+            <span class="chip" data-value="nat_range">NAT with Range Tolerance</span>
+            <span class="chip" data-value="nat_exact">NAT with Exact Value</span>
+          </div>
+        </div>
+
+        <!-- MCQ Options (Single Select) -->
+        <div class="form-group">
+          <label>Number of Choices per MCQ</label>
+          <div class="chip-group">
+            <span class="chip" data-group="mcq-options" data-value="3">3 Options (A, B, C)</span>
+            <span class="chip" data-group="mcq-options" data-value="4">4 Options (A, B, C, D)</span>
+            <span class="chip" data-group="mcq-options" data-value="5">5 Options (A, B, C, D, E)</span>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="examDescription">Examination Description (Optional)</label>
+          <textarea id="examDescription" placeholder="Provide additional details about the examination..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Save Examination Configuration</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Load Firebase & Admin JS -->
+  <script type="module" src="create.js"></script>
+</body>
+</html>
